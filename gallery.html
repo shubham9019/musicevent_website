@@ -1,0 +1,110 @@
+<html>
+<head>
+    <link rel="icon" href="img/logo.png" />
+    <link rel="stylesheet" href="style.css"/>
+    <title>Event Gallery</title>
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.container {
+    position: relative;
+    display: none;
+}
+
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+ </head>
+<body>
+    <header>
+    <div id="box1">
+        <nav>
+        
+     <a href="index.html" title="Home">  <img  src="img/logo.png"/></a> 
+        
+      <ul>
+        <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        <li><a id="active" href="php/login.php">Sign In</a></li>
+        
+        </ul>
+        
+        
+            
+            
+                
+        </nav>
+        <h2 id="title">Event Gallery</h2>
+    </div>
+        </header>
+<div class="row">
+  <div class="column">
+    <img src="img/1.jpg" alt="img1" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/2.jpg" alt="img2" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/3.jpg" alt="img3" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/4.jpg" alt="img4" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+</body>
+</html>
